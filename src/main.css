@@ -80,9 +80,10 @@ success {
 }
 .timeDuration {
     
-    color:#F708a5;
-    padding-top: 30px;
-    margin-top: 30px;
+    /* color:#F708a5; */
+    color: white;
+    /* padding-top: 30px;
+    margin-top: 30px; */
     font-size: x-large;
     /* margin-inline-start: 10px;
     margin-block-start: 10em; */

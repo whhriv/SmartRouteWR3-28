@@ -10,29 +10,45 @@ import GoogleMapsLink from './Mapping/GoogleMapsLink'
 export default function Footer() {
 
     let timeDuration = JSON.parse(sessionStorage.getItem("FooterTime"));
-    // let waypoints = JSON.parse(sessionStorage.getItem("waypoints"));
-
-    // let waypoints = JSON.parse(sessionStorage.getItem("waypoints"));
-
-
-
+      let start = sessionStorage.getItem("startPoint");
+    let waypoints = JSON.parse(sessionStorage.getItem("waypoints"));
 
   return (
-    <MDBFooter bgColor='light' className='text-center text-lg-left'>
+    <MDBFooter bgColor='light' className='text-start text-lg-left'>
       <MDBContainer className='footer'>
         <MDBRow>
-          <MDBCol size='auto' className='mt-0 mb-4 mb-md-0'>
+            <MDBCol size='auto'>
            
               <GoogleMapsLink /> 
-              </MDBCol>
-              <MDBCol>
-                <div>
-              <span className="timeDuration ">Route Time: {timeDuration}</span>
-            </div>
-          </MDBCol>
-          {/* <MDBCol><p className="timeDuration ">Route Time: {timeDuration}</p></MDBCol> */}
+            </MDBCol>
+            <MDBCol size='auto mt-2'>
+              <span className="timeDuration ">Route Time: {timeDuration} seconds</span>
+              <span className="ps-5">{start}{waypoints}</span>
+   
+   
+      </MDBCol>
         </MDBRow>
       </MDBContainer>
     </MDBFooter>
   );
 }
+
+//     <MDBFooter bgColor='light' className='text-start text-lg-left'>
+//       <MDBContainer className='footer'>
+//         <MDBRow>
+//           {/* <MDBCol size='auto' className='mt-0 mb-4 mb-md-0'> */}
+//            <div>
+//               <GoogleMapsLink /> 
+//               {/* </MDBCol>
+//               <MDBCol> */}
+                
+//               <span className="timeDuration ">Route Time: {timeDuration}</span>
+            
+//           {/* </MDBCol> */}
+//           {/* <MDBCol><p className="timeDuration ">Route Time: {timeDuration}</p></MDBCol> */}
+//         </div>
+//         </MDBRow>
+//       </MDBContainer>
+//     </MDBFooter>
+//   );
+// }
