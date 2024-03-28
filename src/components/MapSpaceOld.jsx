@@ -111,6 +111,7 @@ function Directions( {start, stops }){
         icon: {
           url: '../../public/smart_route_small_logo.png', 
           scaledSize: new google.maps.Size(40, 40), 
+          
         },
       },
     });
