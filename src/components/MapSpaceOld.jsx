@@ -37,33 +37,7 @@ export default function DirectionMapSpace( {routes} ) {
 
 }
 
-// function GoogleMapsLink(){
 
-//   let start=replaceSpace(sessionStorage.getItem("startPoint"));
-
-
-//   let waypoints=JSON.parse(sessionStorage.getItem("waypoints"));
-
-//   console.log(waypoints);
-//   let waypointString="";
-
-//   for(let i=0;i<waypoints.length;i++){
-//     let point = replaceSpace(waypoints[i]);
-//     if(i<waypoints.length-1){
-//       waypointString+=point+"|";
-//     }else{
-//       waypointString+=point
-//     }
-//   }
-
-//   console.log(waypointString);
-//   return(
-//     <div>
-//       <a target='_blank' href={`https://www.google.com/maps/dir/?api=1&destination=${start}&origin=${start}&waypoints=${waypointString}`}>Open in Google Maps</a>
-//     </div>
-
-//   )
-// }
 
 function Directions( {start, stops }){
   const map = useMap();
@@ -131,6 +105,15 @@ function Directions( {start, stops }){
     .catch((error) => {
         console.log("error fetching directions:", error)
     })
+
+    directionsRenderer.setOptions({
+      markerOptions: {
+        icon: {
+          url: '../../public/smart_route_small_logo.png', 
+          scaledSize: new google.maps.Size(40, 40), 
+        },
+      },
+    });
   }, [directionsService, directionsRenderer]);
 
  let stretches = sessionStorage.getItem("waypoints")
